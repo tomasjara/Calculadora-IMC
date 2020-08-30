@@ -4,90 +4,102 @@
 }
 
 body {
-    background: #000000;
+    background: #1D1B1B   ;
 }
 
 #contenedor {
     width: 1000px;
     height: 610px;
-    background: #000000;
+    background: #1D1B1B   ;
     margin: 0.5em auto;
     padding: 0.5em;
     border-radius: 0.5em;
 }
 
 #header {
-    border: 1px solid #FFFFFF;
     height: 10%;
-    background: #60AFAF;
+    background: #1D1B1B  ;
     padding: 0.5em;
     border-radius: 0.8em;
     margin: 0.5em;
 }
 
 #header h1 {
-    font-size: 40px;
+    font-size: 45px;
     text-align: center;
-    font-family: 'Calibri';
+    font-family: 'Inconsolata', monospace;
     margin-bottom: 0;
+    color: #FFFFFF;
 }
 
 #sub-contenedor {
     height: 40%;
-    background: #60AFAF;
-    padding: 0.5em;
+    background: #1D1B1B;
+    padding: 0.3em;
     margin: 0.5em;
-    border: 1px solid #FFFFFF;
     border-radius: 0.8em;
 }
 
 #formulario {
     height: 100%;
     width: 40%;
+    position: relative;
     float: left;
+    background: #D88F06 ;
+    border-radius: 0.7em;
 }
 
 #formulario label {
     font-size: 30px;
-    font-family: 'Cambria';
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
     display: block;
 }
 
 #formulario input {
     outline: none;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
     margin: 10px;
     border: 1px solid #FFFFFF;
     border-radius: 1px;
     font-size:20px;
+    width: 94%;
 }
 
 #selector-sexo {
     margin: 10px;
     font-size:20px;
+    width: 94%;
+    text-align-last: center;
 }
 
 #informacion {
     height: 100%;
-    width: 60%; 
+    width: 50%; 
     float: right;
+    background: #D88F06 ;
+    border-radius: 0.7em;
 }
 
 #informacion h2, h3 {
+    height: 10%px;
     margin: 5px;
+    font-family: 'Rubik', sans-serif;
     text-align: center;
+    font-size: 24px;
 }
 
 #informacion p {
-    margin: 45px;
+    margin: 30px;
+    font-size: 18.5px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #botones {
-    border: 1px solid #FFFFFF;
-    height: 10%;
-    background: #60AFAF;    
+    height: 10%;   
     padding: 0.5em;
     margin: 0.5em;
-    border-radius: 0.8em;
 }
 
 #botones button {
@@ -95,12 +107,12 @@ body {
     font-size: 30px;
     padding: 3px;
     border: 1px solid ;
+    font-family: 'Rubik', sans-serif;
 }
 
 #resultado {
-    border: 1px solid #FFFFFF;
-    height:10%;
-    background: #60AFAF;
+    height:22%;
+    background: #D88F06;
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 0.8em;
@@ -108,11 +120,17 @@ body {
 
 #resultado label {
     font-size: 30px;
-    font-family: 'Cambria';
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    display: block;
 }
 
 #resultado input {
     border: 1px solid ;
     border-radius: 1px;
-    font-size:20px;
+    font-size:25px;
+    font-family: 'Rubik', sans-serif;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
