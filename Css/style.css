@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000000;
+}
+
+#contenedor {
+    width: 1000px;
+    height: 610px;
+    background: #000000;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+#header {
+    border: 1px solid #FFFFFF;
+    height: 10%;
+    background: #60AFAF;
+    padding: 0.5em;
+    border-radius: 0.8em;
+    margin: 0.5em;
+}
+
+#header h1 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Calibri';
+    margin-bottom: 0;
+}
+
+#sub-contenedor {
+    height: 40%;
+    background: #60AFAF;
+    padding: 0.5em;
+    margin: 0.5em;
+    border: 1px solid #FFFFFF;
+    border-radius: 0.8em;
+}
+
+#formulario {
+    height: 100%;
+    width: 40%;
+    float: left;
+}
+
+#formulario label {
+    font-size: 30px;
+    font-family: 'Cambria';
+    display: block;
+}
+
+#formulario input {
+    outline: none;
+    margin: 10px;
+    border: 1px solid #FFFFFF;
+    border-radius: 1px;
+    font-size:20px;
+}
+
+#selector-sexo {
+    margin: 10px;
+    font-size:20px;
+}
+
+#informacion {
+    height: 100%;
+    width: 60%; 
+    float: right;
+}
+
+#informacion h2, h3 {
+    margin: 5px;
+    text-align: center;
+}
+
+#informacion p {
+    margin: 45px;
+}
+
+#botones {
+    border: 1px solid #FFFFFF;
+    height: 10%;
+    background: #60AFAF;    
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 0.8em;
+}
+
+#botones button {
+    width: 100%;
+    font-size: 30px;
+    padding: 3px;
+    border: 1px solid ;
+}
+
+#resultado {
+    border: 1px solid #FFFFFF;
+    height:10%;
+    background: #60AFAF;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 0.8em;
+}
+
+#resultado label {
+    font-size: 30px;
+    font-family: 'Cambria';
+}
+
+#resultado input {
+    border: 1px solid ;
+    border-radius: 1px;
+    font-size:20px;
+}
