@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Calculadora de IMC</title>
-	<link rel="stylesheet" href="Css/style.css"> 
+	<link rel="stylesheet" href="Css/style.css">
 	<link rel="icon" href="img/icon.png">
+
 	<!-- Google font -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" >
-	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@800&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@800&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap">
+
+	<!-- Responsive -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
+
 <body>
 
 	<div id="contenedor">
 
-        <div id="header">
+		<div id="header">
 			<h1>Calculadora de IMC</h1>
 		</div>
 
 		<div id="sub-contenedor">
 			<div id="formulario">
-				
+
 				<label>Sexo:</label>
-				<select id="selector-sexo"> 
-					<option value=>Hombre</option> 
+				<select id="selector-sexo">
+					<option value=>Hombre</option>
 					<option value="Mujer">Mujer</option>
 				</select>
 
@@ -31,87 +37,89 @@
 				<input id="peso" pattern="[0-1000]{1,4}" type="number" autofocus placeholder="Kilogramos"></input>
 
 				<label>Estatura:</label>
-				<input id="estatura" min="0" type="number" placeholder="Metros"></input>	
-				
+				<input id="estatura" min="0" type="number" placeholder="Metros"></input>
+
 			</div>
-			 <div id="informacion">
+			<div id="informacion">
 				<h2>¿Cómo se mide el IMC?</h2>
 				<h3><i>Indice de masa corporal</i></h3>
 				<p>
-					La fórmula del IMC es el peso en kilógramos dividido por el cuadrado de la altura en metros (kg/m2). 
-					El IMC es una indicación simple de la relación entre el peso y la talla que se utiliza frecuentemente 
+					La fórmula del IMC es el peso en kilógramos dividido por el cuadrado de la altura en metros (kg/m2).
+					El IMC es una indicación simple de la relación entre el peso y la talla que se utiliza
+					frecuentemente
 					para identificar el sobrepeso y la obesidad.
 				</p>
-			</div> 
+			</div>
 		</div>
 
 		<div id="botones">
-			<button onClick="calculadoraImc()">Calcular IMC</button> 
-			
+			<button onClick="calculadoraImc()">Calcular IMC</button>
+
 		</div>
-		
-        <div id="resultado">
+
+		<div id="resultado">
 			<label>Imc:</label>
-				<input id="imc"  readonly></input> 
+			<input id="imc" readonly></input>
 
 			<label>Clasificacion:</label>
-				<input id="clasificacion" readonly>
+			<input id="clasificacion" readonly>
 		</div>
-<script>
-	
-	function calculadoraImc() {
-		
-		// Variables a procesar
+		<script>
 
-		var estatura = parseFloat(document.getElementById("estatura").value)
-		var peso = parseInt(document.getElementById("peso").value)
-		
-		// Validacion si estos numeros son negativos
+			function calculadoraImc() {
 
-		switch (true) {
+				// Variables a procesar
 
-			case estatura <= 0 && peso <= 0:
-				alert("Su peso y estatura no pueden ser menor o igual a 0, intentelo de nuevo.")	
-				var validacion = boolean(false)	
-				break;
-			case estatura <= 0:
-				alert("Su estatura no puede ser menor o igual a 0, intentelo de nuevo.")
-				var validacion = boolean(false)
-				break;
-			case peso <= 0:
-				alert("Su peso no puede ser menor o igual a 0, intentelo de nuevo.")
-				var validacion = boolean(false)
-				break;
-			default:
-			var validacion = true
-		}
-		// Calculo de IMC
-		if (validacion) {
-			var resultado = peso / Math.pow(estatura,2)
-			var resultado = resultado.toFixed(1)
-			document.getElementById("imc").value = resultado
-		}
-		// Clasificacion de IMC
-		switch(validacion) {
-			
-			case resultado < 18.50:
-				document.getElementById("clasificacion").value = "Bajo peso"
-				break;
-			case resultado >= 18.50 && resultado <= 24.99:
-				document.getElementById("clasificacion").value = "Normal"
-				break;
-			case resultado >= 25.00 && resultado < 30.00:
-				document.getElementById("clasificacion").value = "Sobrepeso"
-				break;	
-			case resultado >= 30.00:
-				document.getElementById("clasificacion").value = "Obeso"
-				break;
-			default:
-				alert("Verifique que haya ingresado los datos correctamente")	
-		}
-	}
-	
-</script>
-	
+				var estatura = parseFloat(document.getElementById("estatura").value)
+				var peso = parseInt(document.getElementById("peso").value)
+
+				// Validacion si estos numeros son negativos
+
+				switch (true) {
+
+					case estatura <= 0 && peso <= 0:
+						alert("Su peso y estatura no pueden ser menor o igual a 0, intentelo de nuevo.")
+						var validacion = boolean(false)
+						break;
+					case estatura <= 0:
+						alert("Su estatura no puede ser menor o igual a 0, intentelo de nuevo.")
+						var validacion = boolean(false)
+						break;
+					case peso <= 0:
+						alert("Su peso no puede ser menor o igual a 0, intentelo de nuevo.")
+						var validacion = boolean(false)
+						break;
+					default:
+						var validacion = true
+				}
+				// Calculo de IMC
+				if (validacion) {
+					var resultado = peso / Math.pow(estatura, 2)
+					var resultado = resultado.toFixed(1)
+					document.getElementById("imc").value = resultado
+				}
+				// Clasificacion de IMC
+				switch (validacion) {
+
+					case resultado < 18.50:
+						document.getElementById("clasificacion").value = "Bajo peso"
+						break;
+					case resultado >= 18.50 && resultado <= 24.99:
+						document.getElementById("clasificacion").value = "Normal"
+						break;
+					case resultado >= 25.00 && resultado < 30.00:
+						document.getElementById("clasificacion").value = "Sobrepeso"
+						break;
+					case resultado >= 30.00:
+						document.getElementById("clasificacion").value = "Obeso"
+						break;
+					default:
+						alert("Verifique que haya ingresado los datos correctamente")
+				}
+			}
+
+		</script>
+
 </body>
+
 </html>
