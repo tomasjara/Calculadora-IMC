@@ -4,6 +4,7 @@
 <head>
 	<title>Calculadora de IMC</title>
 	<link rel="stylesheet" href="Css/style.css">
+	<script src="js/main.js"></script>
 	<link rel="icon" href="img/icon.png">
 
 	<!-- Google font -->
@@ -25,36 +26,37 @@
 		</div>
 
 		<div id="sub-contenedor">
-			<div id="formulario">
+			<form action="" class="formulario_contenedor" id="formulario_contenedor">	
+				<div id="formulario">
 
-				<label>Sexo:</label>
-				<select id="selector-sexo">
-					<option value=>Hombre</option>
-					<option value="Mujer">Mujer</option>
-				</select>
+					<label>Sexo:</label>
+					<select id="selector-sexo">
+						<option value=>Hombre</option>
+						<option value="Mujer">Mujer</option>
+					</select>
 
-				<label>Peso:</label>
-				<input id="peso" pattern="[0-1000]{1,4}" type="number" autofocus placeholder="Kilogramos"></input>
+					<label>Peso(Kg.):</label>
+					<input id="peso-input" pattern="[1-999]{1,3}" min="1" type="number" autofocus placeholder="Kilogramos"></input>
 
-				<label>Estatura:</label>
-				<input id="estatura" min="0" type="number" placeholder="Metros"></input>
+					<label>Estatura(Cm.):</label>
+					<input id="estatura-input" pattern="[1-350]{2,3}" min="1" type="number" placeholder="Centimetros"></input>
 
-			</div>
-			<div id="informacion">
-				<h2>¿Cómo se mide el IMC?</h2>
-				<h3><i>Indice de masa corporal</i></h3>
-				<p>
-					La fórmula del IMC es el peso en kilógramos dividido por el cuadrado de la altura en metros (kg/m2).
-					El IMC es una indicación simple de la relación entre el peso y la talla que se utiliza
-					frecuentemente
-					para identificar el sobrepeso y la obesidad.
-				</p>
-			</div>
+				</div>
+			</form>	
+				<div id="informacion">
+					<h2>¿Cómo se mide el IMC?</h2>
+					<h3><i>Indice de masa corporal</i></h3>
+					<p>
+						La fórmula del IMC es el peso en kilógramos dividido por el cuadrado de la altura en metros (kg/m2).
+						El IMC es una indicación simple de la relación entre el peso y la talla que se utiliza
+						frecuentemente
+						para identificar el sobrepeso y la obesidad.
+					</p>
+				</div>
 		</div>
 
 		<div id="botones">
-			<button onClick="calculadoraImc()">Calcular IMC</button>
-
+			<button onClick="calculadoraImc()" cursor="pointer">Calcular IMC</button>
 		</div>
 
 		<div id="resultado">
@@ -63,63 +65,10 @@
 
 			<label>Clasificacion:</label>
 			<input id="clasificacion" readonly>
+			<script src="js/validar.js"></script>
 		</div>
-		<script>
-
-			function calculadoraImc() {
-
-				// Variables a procesar
-
-				var estatura = parseFloat(document.getElementById("estatura").value)
-				var peso = parseInt(document.getElementById("peso").value)
-
-				// Validacion si estos numeros son negativos
-
-				switch (true) {
-
-					case estatura <= 0 && peso <= 0:
-						alert("Su peso y estatura no pueden ser menor o igual a 0, intentelo de nuevo.")
-						var validacion = boolean(false)
-						break;
-					case estatura <= 0:
-						alert("Su estatura no puede ser menor o igual a 0, intentelo de nuevo.")
-						var validacion = boolean(false)
-						break;
-					case peso <= 0:
-						alert("Su peso no puede ser menor o igual a 0, intentelo de nuevo.")
-						var validacion = boolean(false)
-						break;
-					default:
-						var validacion = true
-				}
-				// Calculo de IMC
-				if (validacion) {
-					var resultado = peso / Math.pow(estatura, 2)
-					var resultado = resultado.toFixed(1)
-					document.getElementById("imc").value = resultado
-				}
-				// Clasificacion de IMC
-				switch (validacion) {
-
-					case resultado < 18.50:
-						document.getElementById("clasificacion").value = "Bajo peso"
-						break;
-					case resultado >= 18.50 && resultado <= 24.99:
-						document.getElementById("clasificacion").value = "Normal"
-						break;
-					case resultado >= 25.00 && resultado < 30.00:
-						document.getElementById("clasificacion").value = "Sobrepeso"
-						break;
-					case resultado >= 30.00:
-						document.getElementById("clasificacion").value = "Obeso"
-						break;
-					default:
-						alert("Verifique que haya ingresado los datos correctamente")
-				}
-			}
-
-		</script>
-
+	</div>
+	
 </body>
 
 </html>

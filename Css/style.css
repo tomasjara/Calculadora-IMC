@@ -63,7 +63,6 @@ body {
     text-align: center;
     margin: 10px;
     border: 1px solid #FFFFFF;
-    border-radius: 1px;
     font-size:20px;
     width: 94%;
 }
@@ -113,6 +112,7 @@ body {
     padding: 3px;
     border: 1px solid ;
     font-family: 'Rubik', sans-serif;
+    cursor: pointer;
 }
 
 #resultado {
@@ -138,6 +138,25 @@ body {
     display: block;
     width: 100%;
     text-align: center;
+    cursor:context-menu;
+}
+
+/* Cambio de color al pasar el mouse por encima. */
+
+#formulario input:hover {
+    border: 2px solid #ffffff;
+}
+
+#selector-sexo:hover {
+    border: 2px solid #ffffff;
+}
+
+#botones button:hover {
+    border: 2px solid #ffffff;
+}
+
+#formulario input:invalid {
+    border: 2px solid #ff0000;
 }
 
 /* Adaptacion de contenedor */ 
@@ -236,7 +255,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
     #selector-sexo {
-        background: #141313;
+        background: #1D1B1B;
         color: #ffffff;
     }
 
@@ -255,3 +274,32 @@ body {
         color: #ffffff;
     }
 }
+
+/* Quitar botones de los input */
+
+    /* Chrome */
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    input[type="number"]:hover,
+    input[type="number"]:focus {
+        -moz-appearance: number-input;
+    }
+
+    /* Other */
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
